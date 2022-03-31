@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "factorial",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,7 @@
+{
+  "name": "factorial",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
