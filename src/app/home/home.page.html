@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Factorial
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,22 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Factorial2</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <form (ngSubmit)="calculate()" #miFormulario="ngForm" autocomplete="off">
+      <ion-input type="number" pattern="^[0-9]*$" maxlength="3" required name="factor" [(ngModel)]="factor"></ion-input>
+      <ion-button type="submit" expand="block" fill="clear" shape="round" [disabled]="miFormulario.invalid">
+        Calculate
+      </ion-button>
+    </form>
+    
+    <ion-button (click)="reset()" expand="block" fill="clear" shape="round" [disabled]="miFormulario.invalid">
+      Reset
+    </ion-button>
+
+    <ion-input type="text" disabled readonly name="result" [(ngModel)]="result"></ion-input>
   </div>
 </ion-content>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,29 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  @ViewChild('miFormulario') miFormulario!: NgForm;
+  
+  result: any = '0'
+  factor: number
+
   constructor() {}
+
+  calculate(){
+    if (this.factor <100){
+      this.result = this.factorial(this.factor)
+    }else{
+      this.result =  "Factor is too high, please enter a factor less than 100"
+    }
+  }
+
+  factorial(n: number): number {
+    if (n<=1) return 1;
+    return n* this.factorial(n-1);
+  }
+
+  reset(){
+    this.result = 0
+    this.factor = null
+  }
 
 }
